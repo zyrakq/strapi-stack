@@ -1,0 +1,8 @@
+services:
+  strapi:
+    networks:
+      - strapi-workspace-network
+
+networks:
+  strapi-workspace-network:
+    external: true
