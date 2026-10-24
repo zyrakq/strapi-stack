@@ -7,7 +7,7 @@ x-logging: &default-logging
 
 services:
   strapi:
-    image: ${IMAGE:localhost/strapi}
+    image: ${IMAGE:-localhost/strapi}
     container_name: strapi
     restart: unless-stopped
     volumes:

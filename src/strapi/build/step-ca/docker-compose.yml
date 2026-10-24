@@ -6,7 +6,7 @@ x-logging: &default-logging
     compress: "${LOG_COMPRESS:-true}"
 services:
   strapi:
-    image: ${IMAGE:localhost/strapi}
+    image: ${IMAGE:-localhost/strapi}
     container_name: strapi
     restart: unless-stopped
     volumes:
@@ -28,6 +28,7 @@ services:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+      ALLOWED_HOSTS: ${LETSENCRYPT_HOST}
     networks:
       - strapi-network
       - step-ca-network
